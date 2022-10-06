@@ -1,0 +1,232 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 4fr 15fr 4fr;
+	grid-template-rows: 5% 5fr 5fr 5fr 5fr 2.5fr;
+	grid-template-areas: "A A A" ". B ." " . C ." ". D ." ". E ." "F F F";
+	grid-gap: 15px;
+	background-color: #CCFFFF;
+}
+
+#one {
+	grid-area: A;
+	align-self: center;
+	text-align: center;
+	background-color: white;
+	padding: 10px;
+}
+
+#two {
+	grid-area: B;
+	text-align: center;
+}
+
+#three {
+	grid-area: C;
+	text-align: center;
+}
+
+#four {
+	grid-area: D;
+	text-align: center;
+}
+
+#five {
+	grid-area: E;
+	text-align: center;
+}
+
+#six {
+	grid-area: F;
+}
+
+.logo {
+	width: calc(100% / 2);
+	margin-bottom: calc(15px + 15px);	
+}
+
+.post {
+	border: solid 2px;
+	border-radius: calc(100% / 70);	
+	background-color: white;
+	padding: calc(2.5% * 2);	
+	font-family: 'Montserrat', sans-serif;
+}
+
+.post h1 {
+	margin-bottom: 5%;
+}
+
+.post h2 {
+	text-align: start;
+	margin-bottom: calc(7% - 2%);
+}
+
+.post p {
+	text-align: start;
+}
+
+.footer {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: "footer-contacts footer-company footer-partners";
+	justify-items: center;
+	align-items: start;
+	min-height: 300px;
+	background-color: #242424;
+	margin-top: 50px;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+}
+.footer-contacts {
+	grid-area: footer-contacts;
+	display: grid;
+	justify-self: end;
+	padding-top: 25px;
+}
+.glow-button__footer {
+  text-decoration: none;
+  display: inline-block;
+	padding: 15px 5px;
+	margin-top: 35px;
+	margin-left: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 40px 40px #999966 inset, 0 0 0 0 #999966;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+	font-size: 12px;
+  letter-spacing: 2px;
+  color: white;
+  transition: .25s ease-in-out;
+}
+.glow-button__footer:hover {
+  box-shadow: 0 0 10px 0 #999966 inset, 0 0 10px 4px #999966;
+  color: #CCFFFF;
+	transition: .25s ease-in-out;
+}
+.footer-contacts>h1 {
+	font-size: 25px;
+	justify-self: center;
+	color: rgba(255, 255, 255, .5);
+}
+.footer-contacts__links {
+	text-decoration: none;
+	color: white;
+	padding: 5px 0;
+	padding-top: 25px;
+	justify-self: center;
+	transition: .3s ease-out;
+}
+.footer-contacts__links:hover {
+	color: #999966;
+	transition: .25s ease-out;
+}
+.footer-company {
+	grid-area: footer-company;
+	display: grid;
+	padding-top: 25px;
+}
+.footer-company>h1 {
+	font-size: 25px;
+	justify-self: start;
+	color: rgba(255, 255, 255, .5);
+	padding-bottom: 5px;
+}
+.footer-company__links {
+	text-decoration: none;
+	color: white;
+	padding: 5px 0;
+	padding-top: 15px;
+	justify-self: start;
+	transition: .3s ease-out;
+}
+.footer-company__links:hover {
+	color: #999966;
+	transition: .25s ease-out;
+}
+.footer-partners {
+	grid-area: footer-partners;
+	display: grid;
+	justify-self: start;
+	padding-top: 25px;
+}
+.footer-partners>h1 {
+	font-size: 25px;
+	justify-self: start;
+	color: rgba(255, 255, 255, .5);
+	padding-bottom: 5px;
+}
+.footer-partners__links {
+	text-decoration: none;
+	color: white;
+	padding: 5px 0;
+	padding-top: 15px;
+	justify-self: start;
+	transition: .3s ease-out;
+}
+.footer-partners__links:hover {
+	color: #999966;
+	transition: .25s ease-out;
+}
+
+@media screen and (max-width: 425px) {
+	.container {
+		grid-template-areas: "A A A" "B B B" " C C C" "D D D" "E E E" "F F F";
+	}
+	.footer {
+		grid-template-columns: 3fr;
+		grid-template-rows: 1fr 1fr 1fr;
+		grid-template-areas: "footer-contacts" "footer-company" "footer-partners";
+		align-items: center;
+	}
+	.footer-contacts {
+		justify-self: center;
+	}
+	.footer-company>h1 {
+		justify-self: center;
+	}
+	.footer-company__links {
+		justify-self: center;
+	}
+	.footer-partners {
+		justify-self: center; 
+	}
+	.footer-partners>h1 {
+		justify-self: center;
+	}
+	.footer-partners__links {
+		justify-self: center;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.footer {
+		grid-template-columns: 3fr;
+		grid-template-rows: 1fr 1fr 1fr;
+		grid-template-areas: "footer-contacts" "footer-company" "footer-partners";
+		align-items: center;
+	}
+	.footer-contacts {
+		justify-self: center;
+	}
+	.footer-company>h1 {
+		justify-self: center;
+	}
+	.footer-company__links {
+		justify-self: center;
+	}
+	.footer-partners {
+		justify-self: center; 
+	}
+	.footer-partners>h1 {
+		justify-self: center;
+	}
+	.footer-partners__links {
+		justify-self: center;
+	}
+}
