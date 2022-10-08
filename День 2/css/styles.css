@@ -13,65 +13,86 @@
 
 @font-face {
 	font-family: Arsenal;
-	src: url(../fonts/arsenal-regular.woff2);
+	src: url(./fonts/arsenal-regular.woff2);
+}
+
+body {
+	background-color: #f0f0f0;
 }
 
 .magic-list {
-
+	font-family: Arsenal, sans-serif;
+	font-size: 52px;
+	padding: 70px;
 }
 
 .magic-list__item {
-	text-decoration: none;
-	color: var(--super-color);
-	font-family: Arsenal;
-	font-size: 42px;
 	cursor: none;
-}	
+	color: var(--super-color);
+	text-decoration: none;
+	display: block;
+	line-height: .9;
+	padding: calc(var(--ws) * 3) calc(var(--ws) * 7.5);
+	border-bottom: 1px solid rgb(0 0 0 / .09);
+	counter-increment: my-counter;
+}
 
 .magic-list__item:first-child {
-
+	border-top: 1.5px solid var(--super-color);
 }
 
 .magic-list__header {
+	width: min-content;
 	transition: transform var(--transition);
-	margin: 120px;
-	transition: all ease 1.5s;
-
-}
-
-.magic-list__header:hover {
-	transform: translateX(-100px);
+	will-change: transform;
 }
 
 .magic-list__item::before {
+	content: '(0' counter(my-counter) ')';
+	position: absolute;
+	font-size: calc(var(--ws) * .95);
+	margin-left: calc(var(--ws) * -2.25);
+	margin-top: calc(var(--ws) / 2);
+	letter-spacing: .5px;
 	transition: transform var(--transition);
-	content: '';
-    display: block;
-    height: 0.5px; 
-    background: rgba(190, 190, 190, 0.5); 
-    width: 95%; 
-    margin: 0 auto 10px; 
+	will-change: transform;
 }
 
 .magic-list__item:hover .magic-list__header,
 .magic-list__item:hover::before {
-
+	transform: translate3d(calc(var(--ws) * -5), 0, 0);
 }
 
 .cursor {
-	transition: transform var(--transition-cursor), height 1s ease;
+	--width: calc(var(--ws) * 22);
+	--height: calc(var(--ws) * 14);
+	position: fixed;
+	width: var(--width);
+	height: 0;
+	top: calc(var(--height) * -.5);
+	left: calc(var(--width) * -.5);
+	overflow: hidden;
+	transform: translate3d(var(--move-x), var(--move-y), 0);
+	z-index: -1;
+	will-change: transform;
 }
 
 .magic-list__item:hover .cursor {
-
+	height: var(--height);
 }
 
 .cursor__image {
+	position: relative;
+	width: calc(var(--width) * 2);
+	height: calc(var(--height) * 2);
+	top: calc(var(--height) * -.4);
+	left: calc(var(--width) * -.25);
+	background-size: cover;
+	background-position: center;
+	transform: var(--cursor-transform) scale(1.5);
 	transition: transform var(--transition-cursor);
 }
 
 .magic-list__item:hover .cursor__image {
-
+	transform: var(--cursor-transform) scale(1);
 }
-
-
