@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Ermilov;
+    src: url(../fonts/Ermilov-bold.otf);
+}
+
+.body-block {
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-rows: 2fr 17fr 12fr 9fr 10fr 2fr 3fr;
+    grid-template-areas: "header header header" "company company company" ". map ." "services services services" "activities activities activities" ". weather ." "footer footer footer";
+}
+
+header {
+    grid-area: header;
+    background-color: #fbec5d;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 5fr 2fr;
+    grid-template-rows: 2fr;
+    grid-template-areas: "logo menu sign";
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.header a {
+    text-decoration: none;
+}
+
+.logo {
+    grid-area: logo;
+    justify-self: center;
+}
+.logo img {
+    width: 80px;
+    height: 70px;
+}
+
+.menu {
+    grid-area: menu;
+    justify-self: center;
+    align-self: center;
+}
+.menu a {
+    color: #535353;
+    font-family: Ermilov;
+    font-size: 20px;
+    margin: calc(1vw + 1vh); 
+    display: inline-block;
+    transition: .3s;
+}
+.menu a:hover {
+  transform: translateY(-7px);
+}
+
+.sign {
+    grid-area: sign;
+    align-self: center;
+}
+.sign-button {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "one two"
+}
+#one {
+    grid-area: one;
+}
+#two {
+    grid-area: two;
+}
+.floating-button {
+  text-decoration: none;
+  display: inline-block;
+  width: 140px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 45px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin: 10px 20px;
+  color: #524f4e;
+  background: white;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+  transition: .3s;
+}
+.floating-button:hover {
+  background: #2EE59D;
+  box-shadow: 0 15px 20px rgba(46, 229, 157, .4);
+  color: white;
+  transform: translateY(-7px);
+}
+
+.company {
+    grid-area: company;
+
+}
+.company img {
+    width: 100%;
+    position: relative;
+    max-width: 100%;
+    height: auto;
+}
+.text-company {
+    position: absolute;
+    top: 700px;
+    left: 0;
+    width: 90%;
+    background-color: #fbec5d;
+    padding: 15px;
+}
+.text-company h1 {
+    font-size: 42px;
+    font-family: Ermilov;
+    color: #535353;
+}
+.text-company p {
+    font-size: 14px;
+    font-family: Ermilov;
+    color: #535353;
+}
+
+.map {
+    grid-area: map;
+
+}
+.map h1 {
+    font-size: 42px;
+    font-family: Ermilov;
+    color: #535353;
+    margin: 70px auto 30px;
+}
+
+.services {
+    grid-area: services;
+    background-color: #fbec5d;
+}
+.services h1 {
+    font-size: 42px;
+    font-family: Ermilov;
+    color: #535353;
+    margin: 70px auto 70px;
+    text-align: center;
+}
+.services p {
+    font-size: 18px;
+    font-family: Ermilov;
+    color: #535353;
+    margin: 0 45px 0;
+    text-indent: 30px;
+}
+
+.activities {
+    grid-area: activities;
+    justify-self: center;
+}
+.activities h1 {
+    font-size: 42px;
+    font-family: Ermilov;
+    color: #535353;
+    margin: 70px auto 70px;
+    text-align: center;
+}
+.activities-cards {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 2fr;
+    grid-template-areas: "one-a-card two-a-card three-a-card";
+    grid-gap: 50px;
+}
+.a-cards {
+    transition: .3s;
+}
+.a-cards:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 20px rgba(251, 236, 93, .7);  
+}
+.activities-cards img {
+    width: 350px;
+    height: 200px;
+}
+.activities-cards a {
+    display: inline-block;
+    text-decoration: none;
+    color: #535353;
+    font-family: Ermilov;
+    font-size: 18px;
+}
+#one-a-card {
+    grid-area: one-a-card;
+}
+#two-a-card {
+    grid-area: two-a-card;
+}
+#three-a-card {
+    grid-area: three-a-card;
+}
+
+.weather {
+    grid-area: weather;
+
+}
+
+footer {
+    grid-area: footer;
+
+}
