@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Ermilov;
+    src: url(../fonts/Ermilov-bold.otf);
+}
+
+.body-block {
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-rows: 2fr 7fr 25fr 7fr;
+    grid-template-areas: "header header header" ". about ." "certificate certificate certificate" "footer footer footer";
+}
+
+header {
+    grid-area: header;
+    background-color: #fbec5d;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 5fr 2fr;
+    grid-template-rows: 2fr;
+    grid-template-areas: "logo menu sign";
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.header a {
+    text-decoration: none;
+}
+
+.logo {
+    grid-area: logo;
+    justify-self: center;
+}
+.logo img {
+    width: 80px;
+    height: 70px;
+}
+
+.menu {
+    grid-area: menu;
+    justify-self: center;
+    align-self: center;
+}
+.menu a {
+    color: #535353;
+    font-family: Ermilov;
+    font-size: 20px;
+    margin: calc(1vw + 1vh); 
+    display: inline-block;
+    transition: .3s;
+}
+.menu a:hover {
+  transform: translateY(-7px);
+}
+
+.sign {
+    grid-area: sign;
+    align-self: center;
+}
+.sign-button {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "one two"
+}
+#one {
+    grid-area: one;
+}
+#two {
+    grid-area: two;
+}
+.floating-button {
+    text-decoration: none;
+    display: inline-block;
+    width: 140px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 45px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin: 10px 20px;
+    color: #524f4e;
+    background: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+}
+.floating-button:hover {
+    background: #2EE59D;
+    box-shadow: 0 15px 20px rgba(46, 229, 157, .4);
+    color: white;
+    transform: translateY(-7px);
+}
+
+.about_us {
+    grid-area: about;
+}
+.about_us h1 {
+    font-family: Ermilov;
+    font-size: 42px;
+    color: #535353;
+    text-align: center;
+    margin: 30px auto 70px;
+}
+.about_us p {
+    font-family: Ermilov;
+    font-size: 18px;
+    color: #535353;
+}
+
+.certificate {
+ grid-area: certificate;
+}
+.certificate h1 {
+    font-family: Ermilov;
+    font-size: 42px;
+    color: #535353;
+    text-align: center;
+    margin: 70px auto 70px;
+}
+.img-certificate {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 2fr 2fr;
+    grid-template-areas:  "cer1 cer2" "cer3 cer4";
+    grid-gap: 10px;
+    justify-items: center;
+}
+.img-certificate img {
+    width: 400px;
+    height: 500px;
+}
+#one-img__cer {
+    grid-area: cer1;
+}
+#two-img__cer {
+    grid-area: cer2;
+}
+#three-img__cer {
+    grid-area: cer3;
+}
+#four-img__cer {
+    grid-area: cer4;
+}
+
+footer {
+    grid-area: footer;
+
+}
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "footer-contacts footer-company footer-partners";
+    justify-items: center;
+    align-items: start;
+    min-height: 300px;
+    background-color: #fbec5d;
+    margin-top: 50px;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+}
+.footer-contacts {
+    grid-area: footer-contacts;
+    display: grid;
+    justify-self: end;
+    padding-top: 25px;
+}
+.glow-button__footer {
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 5px;
+    margin-top: 35px;
+    margin-left: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 40px 40px #2EE59D inset, 0 0 0 0 #2EE59D;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: white;
+    transition: .25s ease-in-out;
+}
+.glow-button__footer:hover {
+    box-shadow: 0 0 10px 0 #2EE59D inset, 0 0 10px 4px #2EE59D;
+    color: #2EE59D;
+    transition: .25s ease-in-out;
+}
+.footer-contacts>h1 {
+    font-size: 25px;
+    justify-self: center;
+    color: #535353;
+}
+.footer-contacts__links {
+    text-decoration: none;
+    color: #535353;
+    padding: 5px 0;
+    padding-top: 25px;
+    justify-self: center;
+    transition: .3s ease-out;
+}
+.footer-contacts__links:hover {
+    color: #2EE59D;
+    transition: .25s ease-out;
+}
+.footer-company {
+    grid-area: footer-company;
+    display: grid;
+    padding-top: 25px;
+}
+.footer-company>h1 {
+    font-size: 25px;
+    justify-self: start;
+    color: #535353;
+    padding-bottom: 5px;
+}
+.footer-company__links {
+    text-decoration: none;
+    color: #535353;
+    padding: 5px 0;
+    padding-top: 15px;
+    justify-self: start;
+    transition: .3s ease-out;
+}
+.footer-company__links:hover {
+    color: #2EE59D;
+    transition: .25s ease-out;
+}
+.footer-partners {
+    grid-area: footer-partners;
+    display: grid;
+    justify-self: start;
+    padding-top: 25px;
+}
+.footer-partners>h1 {
+    font-size: 25px;
+    justify-self: start;
+    color: #535353;
+    padding-bottom: 5px;
+}
+.footer-partners__links {
+    text-decoration: none;
+    color: #535353;
+    padding: 5px 0;
+    padding-top: 15px;
+    justify-self: start;
+    transition: .3s ease-out;
+}
+.footer-partners__links:hover {
+    color: #2EE59D;
+    transition: .25s ease-out;
+}
+
+@media (max-height: 900px) {
+    .text-company {
+        top: 500px;
+    }
+}
+@media (max-width: 1230px) {
+    .menu a {
+        font-size: 18px;
+    }
+}
+@media (max-width: 1160px) {
+    .menu a {
+        font-size: 16px;
+    }
+}
+@media (max-width: 1080px) {
+    .menu a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .body-block {
+        grid-template-rows: 2fr 5fr 10fr 22fr;
+    }
+    .footer {
+        grid-template-columns: 3fr;
+        grid-template-rows: 2fr 2fr 2fr;
+        grid-template-areas: "footer-contacts" "footer-company" "footer-partners";
+    }
+    .footer-contacts {
+        justify-self: center;
+    }
+    .footer-company {
+        justify-self: center;
+    }
+    .footer-company h1 {
+        justify-self: center;
+    }
+    .footer-company__links {
+        justify-self: center;
+    }
+    .footer-partners {
+        justify-self: center;
+    }
+    .footer-partners h1 {
+        justify-self: center;
+    }
+    .footer-partners__links {
+        justify-self: center;
+    }
+}
+
+@media (max-width: 980px) {
+    .menu {
+        visibility: hidden;
+        font-size: 1px;
+    }
+    .sign {
+        visibility: hidden;
+        font-size: 1px;
+    }
